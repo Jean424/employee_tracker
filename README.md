@@ -37,7 +37,7 @@ Licensed under the [MIT License](LICENSE).
 - Email: jeanlee.jingli@icloud.com
 
 ## Link
-- Link to the walkthrough vedio: 
+- Link to the walkthrough vedio:  https://watch.screencastify.com/v/FLMqTy6TV75Q7V4dZIdJ
 - Screen_Shot of Note-Taker:
 ![Screenshot of application](./images/ScreenShot2.png)
 ![Screenshot of application](./images/ScreenShot3.png)
