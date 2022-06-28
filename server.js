@@ -44,19 +44,20 @@ inquirer
       case "view all employees":
         viewAllEmployees();
         break;
-      case "add department":
+      case "add a department":
         addDepartment();
         break;
-      case "add roles":
+      case "add a role":
         addRoles();
         break;
-      case "add employee":
+      case "add a employee":
         addEmployee();
         break;
       case "update employee":
         updateRoles();
         break;
       default:
+        process.exit()
         break;
     }
   });
@@ -189,7 +190,6 @@ function updateRoles() {
       })
   })
 }
-
 
 menu();
 
