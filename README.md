@@ -39,5 +39,5 @@ Licensed under the [MIT License](LICENSE).
 ## Link
 - Link to the walkthrough vedio: 
 - Screen_Shot of Note-Taker:
-![Screenshot of readme generater](./images/ScreenShot_Homepage.png)
-![Screenshot of readme generater](./images/ScreenShot_Notetaking.png)
+![Screenshot of application](./images/ScreenShot2.png)
+![Screenshot of application](./images/ScreenShot3.png)
