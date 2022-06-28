@@ -65,6 +65,7 @@ inquirer
 
 function viewAllDepartments() {
   db.query('SELECT * FROM department', function (err, results) {
+    if (err) throw err;
     console.table(results);
     menu();
   });
