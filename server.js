@@ -72,6 +72,7 @@ function viewAllDepartments() {
 
 function viewAllRoles() {
   db.query('SELECT role.title, role.id, department.name, role.salary FROM role LEFT JOIN department ON role.department_id = department.id', function (err, results) {
+    if (err) throw err;
     console.table(results);
     menu();
   });
@@ -88,6 +89,7 @@ ON manager.id = employee.manager_id;`)
 
 function viewAllEmployees() {
   db.query(query, function (err, results) {
+    if (err) throw err;
     console.table(results);
     menu();
   });
@@ -101,11 +103,11 @@ function addDepartment() {
           name:"department",
           message:"enter department name"
       }
-  ]).then((res) => {
-      db.connection.query("INSERT INTO department (name) VALUES (?)", [res.department],(err, data) => {
+  ]).then((data) => {
+      db.query("INSERT INTO department (name) VALUES (?)", [data.department],(err, results) => {
           if (err) throw err;
-          console.table(data);
-          loadQuestion();
+          console.table(results);
+          menu();
       })
   })
 }
@@ -128,11 +130,11 @@ function addRoles() {
           name:"departmentId",
           message:"enter department ID"
       }
-  ]).then((res) => {
-      db.connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [res.title, res.salary, res.departmentId],(err, data) => {
+  ]).then((data) => {
+      db.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [data.title, data.salary, data.departmentId],(err, results) => {
           if (err) throw err;
-          console.table(data);
-          loadQuestion();
+          console.table(results);
+          menu();
       })
   })
 }
@@ -160,11 +162,11 @@ function addEmployee() {
           name: "managerId",
           prompt: "enter manager ID"
       }
-  ]).then((res) => {
-      db.connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", [res.firstName, res.lastName, res.roleId, res.managerId],(err, data) => {
+  ]).then((data) => {
+      db.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", [data.firstName, data.lastName, data.roleId, data.managerId],(err, results) => {
           if (err) throw err;
-          console.table(data);
-          loadQuestion();
+          console.table(results);
+          menu();
       })
   })
 }
@@ -182,11 +184,11 @@ function updateRoles() {
           name:"roleId",
           message:"enter the ID of the new role"
       }
-  ]).then((res) => {
-      db.connection.query("UPDATE employee SET role_id = ? WHERE id = ?", [res.roleId, res.employeeId],(err, data) => {
+  ]).then((data) => {
+      db.query("UPDATE employee SET role_id = ? WHERE id = ?", [data.roleId, data.employeeId],(err, results) => {
           if (err) throw err;
-          console.table(data);
-          loadQuestion();
+          console.table(results);
+          menu();
       })
   })
 }
