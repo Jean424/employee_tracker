@@ -38,5 +38,4 @@ Licensed under the [MIT License](LICENSE).
 
 ## Link
 - Link to the walkthrough vedio: https://watch.screencastify.com/v/FLMqTy6TV75Q7V4dZIdJ
-- Screen_Shot of part of application:![Screenshot of application](./images/ScreenShot2.png)
 - Screen_Shot of part of application:![Screenshot of application](./images/ScreenShot3.png)
